@@ -19,69 +19,90 @@
     @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
     .confetti-piece { position: fixed; animation: confettiFall linear forwards; z-index: 1001; }
     .podium-place { animation: podiumRise 0.8s ease-out forwards; }
-    .header { text-align: center; margin-bottom: 30px; }
-    .header-subtitle { font-size: 14px; color: #FF6B35; letter-spacing: 8px; margin-bottom: 10px; font-weight: 500; }
-    .header-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin: 0; font-family: 'Orbitron', sans-serif; background: linear-gradient(180deg, #fff 0%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 4px; }
-    .header-tracker { font-size: 16px; color: #666; margin-top: 10px; letter-spacing: 3px; }
-    .current-month-badge { margin-top: 20px; padding: 10px 30px; background: rgba(255,107,53,0.2); border-radius: 30px; display: inline-block; border: 2px solid #FF6B35; font-size: 18px; color: #FF6B35; font-weight: 900; font-family: 'Orbitron', sans-serif; letter-spacing: 3px; }
-    .main-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 200px; gap: 20px; align-items: start; }
-    .chart-container { background: rgba(255,255,255,0.02); border-radius: 20px; padding: 30px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
-    .leaderboard { background: rgba(255,255,255,0.02); border-radius: 16px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
-    .leaderboard-header { text-align: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .leaderboard-label { font-size: 10px; color: #888; letter-spacing: 3px; margin-bottom: 5px; }
-    .leaderboard-title { font-size: 14px; color: #fff; font-weight: 900; letter-spacing: 2px; font-family: 'Orbitron', sans-serif; }
-    .leaderboard-item { display: flex; align-items: center; gap: 8px; padding: 10px; margin-bottom: 8px; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid transparent; transition: all 0.3s ease; }
+    .header { text-align: center; margin-bottom: 20px; }
+    .header-subtitle { font-size: 12px; color: #FF6B35; letter-spacing: 6px; margin-bottom: 8px; font-weight: 500; }
+    .header-title { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 900; margin: 0; font-family: 'Orbitron', sans-serif; background: linear-gradient(180deg, #fff 0%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 4px; }
+    .header-tracker { font-size: 14px; color: #666; margin-top: 8px; letter-spacing: 3px; }
+    .current-month-badge { margin-top: 15px; padding: 8px 20px; background: rgba(255,107,53,0.2); border-radius: 30px; display: inline-block; border: 2px solid #FF6B35; font-size: 14px; color: #FF6B35; font-weight: 900; font-family: 'Orbitron', sans-serif; letter-spacing: 3px; }
+    .main-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 220px; gap: 15px; align-items: start; }
+    .chart-container { background: rgba(255,255,255,0.02); border-radius: 16px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 60px rgba(0,0,0,0.5); overflow: hidden; }
+    .leaderboard { background: rgba(255,255,255,0.02); border-radius: 16px; padding: 15px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 40px rgba(0,0,0,0.3); display: flex; flex-direction: column; }
+    .leaderboard-header { text-align: center; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); flex-shrink: 0; }
+    .leaderboard-label { font-size: 9px; color: #888; letter-spacing: 3px; margin-bottom: 4px; }
+    .leaderboard-title { font-size: 12px; color: #fff; font-weight: 900; letter-spacing: 2px; font-family: 'Orbitron', sans-serif; }
+    .leaderboard-scroll { flex: 1; overflow-y: auto; padding-right: 5px; }
+    .leaderboard-scroll::-webkit-scrollbar { width: 4px; }
+    .leaderboard-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 2px; }
+    .leaderboard-scroll::-webkit-scrollbar-thumb { background: rgba(255,215,0,0.3); border-radius: 2px; }
+    .leaderboard-scroll::-webkit-scrollbar-thumb:hover { background: rgba(255,215,0,0.5); }
+    /* Custom scrollbar for all elements */
+    .custom-scroll { scrollbar-width: thin; scrollbar-color: rgba(0,212,170,0.3) rgba(255,255,255,0.05); }
+    .custom-scroll::-webkit-scrollbar { width: 6px; }
+    .custom-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: linear-gradient(180deg, rgba(0,212,170,0.4) 0%, rgba(0,212,170,0.2) 100%); border-radius: 3px; }
+    .custom-scroll::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, rgba(0,212,170,0.6) 0%, rgba(0,212,170,0.4) 100%); }
+    .leaderboard-item { display: flex; align-items: center; gap: 6px; padding: 6px 8px; margin-bottom: 4px; background: rgba(255,255,255,0.02); border-radius: 6px; border: 1px solid transparent; transition: all 0.3s ease; }
     .leaderboard-item.leader { background: rgba(255,215,0,0.15); border: 1px solid rgba(255,215,0,0.4); }
-    .rank-badge { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; font-family: 'Orbitron', sans-serif; flex-shrink: 0; }
-    .leaderboard-avatar { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; }
+    .rank-badge { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; font-family: 'Orbitron', sans-serif; flex-shrink: 0; }
+    .leaderboard-avatar { width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; }
     .leaderboard-info { flex: 1; min-width: 0; }
-    .leaderboard-name { font-size: 9px; font-weight: 700; font-family: 'Orbitron', sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .leaderboard-score-row { display: flex; align-items: center; gap: 6px; }
-    .leaderboard-score { font-size: 13px; color: #fff; font-weight: 900; font-family: 'Orbitron', sans-serif; }
-    .rank-change { font-size: 9px; font-weight: 700; }
+    .leaderboard-name { font-size: 8px; font-weight: 700; font-family: 'Orbitron', sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .leaderboard-score-row { display: flex; align-items: center; gap: 4px; }
+    .leaderboard-score { font-size: 11px; color: #fff; font-weight: 900; font-family: 'Orbitron', sans-serif; }
+    .rank-change { font-size: 8px; font-weight: 700; }
     .rank-change.up { color: #22c55e; }
     .rank-change.down { color: #ef4444; }
-    .progress-section { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; }
-    .progress-label { font-size: 9px; color: #666; letter-spacing: 1px; }
-    .progress-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; margin-top: 8px; overflow: hidden; }
+    .progress-section { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; flex-shrink: 0; }
+    .progress-label { font-size: 8px; color: #666; letter-spacing: 1px; }
+    .progress-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; margin-top: 6px; overflow: hidden; }
     .progress-fill { height: 100%; background: linear-gradient(90deg, #FFD700, #FF6B35); border-radius: 2px; transition: width 0.5s ease; }
-    .begin-race-container { display: flex; justify-content: center; margin-top: 30px; }
-    .begin-race-btn { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); border: none; border-radius: 12px; padding: 16px 48px; font-size: 18px; font-weight: 900; font-family: 'Orbitron', sans-serif; color: #fff; cursor: pointer; letter-spacing: 2px; box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4); transition: all 0.3s ease; text-transform: uppercase; }
+    .begin-race-container { display: flex; justify-content: center; margin: 20px 0; }
+    .begin-race-btn { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); border: none; border-radius: 10px; padding: 12px 36px; font-size: 16px; font-weight: 900; font-family: 'Orbitron', sans-serif; color: #fff; cursor: pointer; letter-spacing: 2px; box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4); transition: all 0.3s ease; text-transform: uppercase; }
     .begin-race-btn:hover { transform: scale(1.05); box-shadow: 0 6px 30px rgba(34, 197, 94, 0.6); }
-    .legend-note { text-align: center; margin-top: 30px; color: #666; font-size: 12px; letter-spacing: 2px; }
-    .overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1000; }
-    .close-btn { margin-top: 50px; background: transparent; border: 2px solid #FFD700; border-radius: 8px; padding: 12px 30px; font-size: 14px; font-weight: 700; font-family: 'Orbitron', sans-serif; color: #FFD700; cursor: pointer; letter-spacing: 2px; transition: all 0.3s ease; }
+    .legend-note { text-align: center; margin-top: 15px; color: #666; font-size: 11px; letter-spacing: 2px; }
+    .overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%); display: flex; flex-direction: column; align-items: center; justify-content: flex-start; z-index: 1000; padding: 20px; padding-bottom: 100px; overflow-y: auto; }
+    .close-btn { margin-top: 30px; background: transparent; border: 2px solid #FFD700; border-radius: 8px; padding: 10px 25px; font-size: 13px; font-weight: 700; font-family: 'Orbitron', sans-serif; color: #FFD700; cursor: pointer; letter-spacing: 2px; transition: all 0.3s ease; }
     .close-btn:hover { background: #FFD700; color: #000; }
     .close-btn.teal { border-color: #00D4AA; color: #00D4AA; }
     .close-btn.teal:hover { background: #00D4AA; color: #000; }
-    .podium-container { display: flex; align-items: flex-end; justify-content: center; gap: 20px; }
-    .standings-list { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; min-width: 350px; }
-    .standings-item { display: flex; align-items: center; gap: 15px; padding: 15px; margin-bottom: 10px; background: rgba(255,255,255,0.02); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); }
+    .podium-container { display: flex; align-items: flex-end; justify-content: center; gap: 15px; }
+    .standings-list { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; min-width: 320px; max-height: 60vh; overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(0,212,170,0.3) rgba(255,255,255,0.05); }
+    .standings-list::-webkit-scrollbar { width: 6px; }
+    .standings-list::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px; }
+    .standings-list::-webkit-scrollbar-thumb { background: linear-gradient(180deg, rgba(0,212,170,0.4) 0%, rgba(0,212,170,0.2) 100%); border-radius: 3px; }
+    .standings-list::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, rgba(0,212,170,0.6) 0%, rgba(0,212,170,0.4) 100%); }
+    .standings-item { display: flex; align-items: center; gap: 10px; padding: 10px; margin-bottom: 6px; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
     .standings-item.leader { background: rgba(255,215,0,0.15); border: 2px solid rgba(255,215,0,0.4); }
-    .standings-rank { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; font-family: 'Orbitron', sans-serif; }
+    .standings-rank { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; font-family: 'Orbitron', sans-serif; flex-shrink: 0; }
+    .standings-name { flex: 1; font-size: 11px; font-weight: 700; font-family: 'Orbitron', sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .standings-score { font-size: 14px; font-weight: 900; font-family: 'Orbitron', sans-serif; }
     .settings-container { max-width: 800px; margin: 0 auto; padding: 20px; }
-    .settings-card { background: rgba(255,255,255,0.02); border-radius: 16px; padding: 30px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px; }
-    .settings-title { font-family: 'Orbitron', sans-serif; font-size: 18px; color: #FFD700; margin-bottom: 20px; letter-spacing: 2px; }
-    .settings-description { color: #888; font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
-    .upload-zone { border: 2px dashed rgba(255,255,255,0.2); border-radius: 12px; padding: 40px; text-align: center; cursor: pointer; transition: all 0.3s ease; }
+    .settings-card { background: rgba(255,255,255,0.02); border-radius: 16px; padding: 25px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px; }
+    .settings-title { font-family: 'Orbitron', sans-serif; font-size: 16px; color: #FFD700; margin-bottom: 15px; letter-spacing: 2px; }
+    .settings-description { color: #888; font-size: 13px; margin-bottom: 15px; line-height: 1.6; }
+    .upload-zone { border: 2px dashed rgba(255,255,255,0.2); border-radius: 12px; padding: 30px; text-align: center; cursor: pointer; transition: all 0.3s ease; }
     .upload-zone:hover { border-color: #FFD700; background: rgba(255,215,0,0.05); }
     .upload-zone.dragover { border-color: #22c55e; background: rgba(34,197,94,0.1); }
-    .upload-icon { font-size: 48px; margin-bottom: 15px; }
-    .upload-text { color: #888; font-size: 14px; }
+    .upload-icon { font-size: 40px; margin-bottom: 10px; }
+    .upload-text { color: #888; font-size: 13px; }
     .upload-text strong { color: #FFD700; }
-    .btn { padding: 12px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; letter-spacing: 1px; border: none; }
+    .btn { padding: 10px 20px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; letter-spacing: 1px; border: none; }
     .btn-primary { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; }
     .btn-primary:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(255,215,0,0.4); }
     .btn-secondary { background: transparent; border: 2px solid #666; color: #888; }
     .btn-secondary:hover { border-color: #888; color: #fff; }
-    .btn-group { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-    .alert { padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; display: flex; align-items: center; gap: 10px; }
+    .btn-group { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+    .alert { padding: 12px 16px; border-radius: 8px; margin-bottom: 15px; font-size: 13px; display: flex; align-items: center; gap: 10px; }
     .alert-success { background: rgba(34,197,94,0.2); border: 1px solid #22c55e; color: #22c55e; }
     .alert-error { background: rgba(239,68,68,0.2); border: 1px solid #ef4444; color: #ef4444; }
-    .data-preview { background: rgba(0,0,0,0.3); border-radius: 8px; padding: 15px; margin-top: 20px; overflow-x: auto; }
-    .data-preview table { width: 100%; border-collapse: collapse; font-size: 12px; }
-    .data-preview th, .data-preview td { padding: 8px 12px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .data-preview th { color: #FFD700; font-family: 'Orbitron', sans-serif; font-weight: 700; }
+    .data-preview { background: rgba(0,0,0,0.3); border-radius: 8px; padding: 12px; margin-top: 15px; overflow-x: auto; max-height: 250px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(255,215,0,0.3) rgba(255,255,255,0.05); }
+    .data-preview::-webkit-scrollbar { width: 6px; height: 6px; }
+    .data-preview::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px; }
+    .data-preview::-webkit-scrollbar-thumb { background: linear-gradient(180deg, rgba(255,215,0,0.4) 0%, rgba(255,215,0,0.2) 100%); border-radius: 3px; }
+    .data-preview::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, rgba(255,215,0,0.6) 0%, rgba(255,215,0,0.4) 100%); }
+    .data-preview table { width: 100%; border-collapse: collapse; font-size: 10px; }
+    .data-preview th, .data-preview td { padding: 6px 8px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); white-space: nowrap; }
+    .data-preview th { color: #FFD700; font-family: 'Orbitron', sans-serif; font-weight: 700; position: sticky; top: 0; background: #1a1a2e; }
     .data-preview td { color: #ccc; }
     .no-data { text-align: center; padding: 60px 20px; color: #666; }
     .no-data-icon { font-size: 64px; margin-bottom: 20px; opacity: 0.5; }
@@ -114,8 +135,17 @@
     
     let currentTab = '2026', currentAlert = null, raceAudio = null, applauseAudio = null;
     let raceState = {'2025':{started:false,monthIndex:-1,progress:0,animated:false,celebration:false,animating:false},'2026':{started:false,monthIndex:-1,progress:0,animated:false,celebration:false,animating:false}};
-    const chartWidth=900,chartHeight=400,padding={top:60,right:120,bottom:40,left:120};
-    const graphWidth=chartWidth-padding.left-padding.right,graphHeight=chartHeight-padding.top-padding.bottom;
+    
+    // Dynamic chart sizing based on BU count
+    function getChartDimensions(buCount) {
+      const baseHeight = 350;
+      const perBuHeight = 45;
+      const minHeight = 350;
+      const maxHeight = 650;
+      const height = Math.min(maxHeight, Math.max(minHeight, buCount * perBuHeight + 80));
+      return { width: 950, height: height };
+    }
+    const padding = {top: 50, right: 100, bottom: 30, left: 140};
 
     function switchTab(tab){
       // Reset race for the tab we're leaving (if it was a race tab)
@@ -132,18 +162,101 @@
     function getDefaultAvatar(c){return'data:image/svg+xml;base64,'+btoa(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#2a2a40"/><circle cx="50" cy="35" r="18" fill="${c}"/><path d="M50 58c20 0 32 12 32 28v14H18V86c0-16 12-28 32-28z" fill="${c}"/></svg>`);}
     function getAvatar(buName,color){const key=buName.replace(/\s+/g,'_').toLowerCase();if(avatarCache[key])return avatarCache[key];const img=new Image();const path=`images/${key}.png`;img.onload=()=>{avatarCache[key]=path;render();};img.onerror=()=>{avatarCache[key]=getDefaultAvatar(color);};img.src=path;return avatarCache[key]||getDefaultAvatar(color);}
     function easeOutCubic(t){return 1-Math.pow(1-t,3);}
-    function getRankInMonth(y,bu,m){const d=raceDataStore[y];return d.bus.map(b=>({name:b.name,score:d.scores[b.name]?.[m]||0})).sort((a,b)=>b.score-a.score).findIndex(s=>s.name===bu)+1;}
-    function getCurrentStandings(y){const d=raceDataStore[y],m=d.months[d.months.length-1];return d.bus.map(b=>({name:b.name,color:b.color,score:d.scores[b.name]?.[m]||0})).sort((a,b)=>b.score-a.score);}
-    function getInterpolatedStandings(y){const s=raceState[y],d=raceDataStore[y];if(!s.started||s.monthIndex<0)return d.bus.map(b=>({name:b.name,color:b.color,score:0}));const e=easeOutCubic(s.progress);return d.bus.map(b=>{let sc=s.monthIndex===0?(d.scores[b.name]?.[d.months[0]]||0)*e:(d.scores[b.name]?.[d.months[s.monthIndex-1]]||0)+((d.scores[b.name]?.[d.months[s.monthIndex]]||0)-(d.scores[b.name]?.[d.months[s.monthIndex-1]]||0))*e;return{name:b.name,color:b.color,score:sc};}).sort((a,b)=>b.score-a.score);}
-    function getX(i,t){return padding.left+(i/Math.max(t-1,1))*graphWidth;}
-    function getY(i,t){return padding.top+(i*(graphHeight/t))+(graphHeight/t)/2;}
+    
+    // Get rank with ties - same score = same rank
+    function getRankWithTies(standings, buName) {
+      let rank = 1;
+      for (let i = 0; i < standings.length; i++) {
+        if (standings[i].name === buName) return rank;
+        if (i > 0 && standings[i].score < standings[i-1].score) rank = i + 1;
+      }
+      return rank;
+    }
+    
+    function getRankInMonth(y,bu,m){
+      const d=raceDataStore[y];
+      const standings = d.bus.map(b=>({name:b.name,score:d.scores[b.name]?.[m]||0})).sort((a,b)=>b.score-a.score);
+      return getRankWithTies(standings, bu);
+    }
+    
+    function getCurrentStandings(y){
+      const d=raceDataStore[y],m=d.months[d.months.length-1];
+      const standings = d.bus.map(b=>({name:b.name,color:b.color,score:d.scores[b.name]?.[m]||0})).sort((a,b)=>b.score-a.score);
+      // Add rank with ties
+      let currentRank = 1;
+      standings.forEach((s, i) => {
+        if (i > 0 && s.score < standings[i-1].score) currentRank = i + 1;
+        s.rank = currentRank;
+      });
+      return standings;
+    }
+    
+    function getInterpolatedStandings(y){
+      const s=raceState[y],d=raceDataStore[y];
+      if(!s.started||s.monthIndex<0)return d.bus.map(b=>({name:b.name,color:b.color,score:0,rank:1}));
+      const e=easeOutCubic(s.progress);
+      const standings = d.bus.map(b=>{
+        let sc=s.monthIndex===0?(d.scores[b.name]?.[d.months[0]]||0)*e:(d.scores[b.name]?.[d.months[s.monthIndex-1]]||0)+((d.scores[b.name]?.[d.months[s.monthIndex]]||0)-(d.scores[b.name]?.[d.months[s.monthIndex-1]]||0))*e;
+        return{name:b.name,color:b.color,score:sc};
+      }).sort((a,b)=>b.score-a.score);
+      // Add rank with ties
+      let currentRank = 1;
+      standings.forEach((s, i) => {
+        if (i > 0 && Math.abs(s.score - standings[i-1].score) > 0.001) currentRank = i + 1;
+        s.rank = currentRank;
+      });
+      return standings;
+    }
+    function getX(i,t,graphWidth){return padding.left+(i/Math.max(t-1,1))*graphWidth;}
+    function getY(i,t,graphHeight){return padding.top+(i*(graphHeight/t))+(graphHeight/t)/2;}
     function startRaceSound(){try{if(!raceAudio){raceAudio=new Audio('sounds/race.mp3');raceAudio.loop=true;raceAudio.volume=0.5;}raceAudio.currentTime=0;raceAudio.play().catch(()=>{});}catch(e){}}
     function stopRaceSound(){if(raceAudio){raceAudio.pause();raceAudio.currentTime=0;}}
     function startApplause(){try{if(!applauseAudio){applauseAudio=new Audio('sounds/applause.mp3');applauseAudio.volume=0.6;}applauseAudio.currentTime=0;applauseAudio.play().catch(()=>{});}catch(e){}}
     function stopApplause(){if(applauseAudio){applauseAudio.pause();applauseAudio.currentTime=0;}}
-    function startRace(y){raceState[y]={started:true,monthIndex:0,progress:0,animated:false,celebration:false,animating:true};startRaceSound();animateRace(y);}
+    
+    let countdownAudio = null;
+    function playCountdownSound(){try{if(!countdownAudio){countdownAudio=new Audio('sounds/count.mp3');countdownAudio.volume=0.7;}countdownAudio.currentTime=0;countdownAudio.play().catch(()=>{});}catch(e){}}
+    function stopCountdownSound(){if(countdownAudio){countdownAudio.pause();countdownAudio.currentTime=0;}}
+    
+    function startRace(y){
+      // Show countdown overlay
+      const countdownOverlay = document.createElement('div');
+      countdownOverlay.id = 'countdown-overlay';
+      countdownOverlay.innerHTML = `
+        <div style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;z-index:2000">
+          <div id="countdown-number" style="font-family:Orbitron,sans-serif;font-size:200px;font-weight:900;color:#FFD700;text-shadow:0 0 50px rgba(255,215,0,0.5),0 0 100px rgba(255,215,0,0.3)">3</div>
+        </div>
+      `;
+      document.body.appendChild(countdownOverlay);
+      playCountdownSound();
+      
+      let count = 3;
+      const countdownNum = document.getElementById('countdown-number');
+      
+      const countdownInterval = setInterval(() => {
+        count--;
+        if (count > 0) {
+          countdownNum.textContent = count;
+          countdownNum.style.transform = 'scale(1.2)';
+          setTimeout(() => { countdownNum.style.transform = 'scale(1)'; }, 150);
+        } else if (count === 0) {
+          countdownNum.textContent = 'GO!';
+          countdownNum.style.color = '#22c55e';
+          countdownNum.style.fontSize = '150px';
+        } else {
+          clearInterval(countdownInterval);
+          stopCountdownSound();
+          document.body.removeChild(countdownOverlay);
+          // Actually start the race
+          raceState[y]={started:true,monthIndex:0,progress:0,animated:false,celebration:false,animating:true};
+          startRaceSound();
+          animateRace(y);
+        }
+      }, 1000);
+    }
+    
     function restartRace(y){raceState[y]={started:false,monthIndex:-1,progress:0,animated:false,celebration:false,animating:false};render();}
-    function animateRace(y){const d=raceDataStore[y],s=raceState[y],ml=d.months.length,dur=ml===1?9000:ml===2?6000:ml<=4?4000:ml<=8?3000:2000;let st=null;function anim(ts){if(!s.animating||currentTab!==y){s.animating=false;return;}if(!st)st=ts;s.progress=Math.min((ts-st)/dur,1);render();if(s.progress<1)requestAnimationFrame(anim);else if(s.monthIndex<d.months.length-1){s.monthIndex++;s.progress=0;st=null;requestAnimationFrame(anim);}else{s.animated=true;s.animating=false;stopRaceSound();startApplause();if(d.months.length>=12)s.celebration=true;render();}}requestAnimationFrame(anim);}
+    function animateRace(y){const d=raceDataStore[y],s=raceState[y],ml=d.months.length,dur=ml===1?15000:ml<=2?10000:ml<=4?7000:ml<=8?5000:3000;let st=null;function anim(ts){if(!s.animating||currentTab!==y){s.animating=false;return;}if(!st)st=ts;s.progress=Math.min((ts-st)/dur,1);render();if(s.progress<1)requestAnimationFrame(anim);else if(s.monthIndex<d.months.length-1){s.monthIndex++;s.progress=0;st=null;requestAnimationFrame(anim);}else{s.animated=true;s.animating=false;stopRaceSound();startApplause();if(d.months.length>=12)s.celebration=true;render();}}requestAnimationFrame(anim);}
     function closeOverlay(y){raceState[y].celebration=false;raceState[y].animated=false;stopApplause();render();}
     function triggerFileUpload(){document.getElementById('fileInput').click();}
     function handleFileUpload(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=function(ev){try{const data=new Uint8Array(ev.target.result),wb=XLSX.read(data,{type:'array'});let hasData=false;const errs=[];['2025','2026'].forEach(y=>{if(wb.SheetNames.includes(y)){const res=parseSheet(wb.Sheets[y],y);if(res.success){raceDataStore[y]=res.data;raceState[y]={started:false,monthIndex:-1,progress:0,animated:false,celebration:false,animating:false};hasData=true;}else errs.push(`Sheet "${y}": ${res.error}`);}});if(errs.length)showAlert('error','Validation Errors:\n'+errs.join('\n'));else if(hasData){saveToStorage();showAlert('success','Data loaded & saved! Found: '+['2025','2026'].filter(y=>wb.SheetNames.includes(y)).join(', '));}else showAlert('error','No valid sheets. Include sheets named "2025" and/or "2026".');render();}catch(err){showAlert('error','Error: '+err.message);}};r.readAsArrayBuffer(f);e.target.value='';}
@@ -176,17 +289,166 @@
     function generateConfetti(){const cols=['#FFD700','#FF6B35','#00D4AA','#7B68EE','#00BFFF','#FF1493','#fff'];let h='';for(let i=0;i<150;i++)h+=`<div class="confetti-piece" style="left:${Math.random()*100}%;top:${-10-Math.random()*20}%;width:${5+Math.random()*10}px;height:${5+Math.random()*10}px;background:${cols[Math.floor(Math.random()*cols.length)]};border-radius:${i%2?'0':'50%'};animation-delay:${Math.random()*2}s;animation-duration:${3+Math.random()*2}s"></div>`;return h;}
     function renderRace(y){const d=raceDataStore[y],s=raceState[y];if(!d||!d.bus||!d.bus.length)return`<div class="no-data"><div class="no-data-icon">📊</div><div style="font-size:18px">No data for ${y}</div><div style="font-size:14px;color:#555">Go to Settings to upload data</div></div>`;
       const am=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],iC=d.months.length>=12,dp=['Start',...d.months];if(!iC&&d.months.length<12)dp.push(am[d.months.length]);
-      const lh=graphHeight/d.bus.length,lg=8,st=getCurrentStandings(y),ip=getInterpolatedStandings(y),rp={1:1,2:.82,3:.75,4:.65,5:.55};let svg='';
-      d.bus.forEach((bu,idx)=>{const rk=s.started&&s.monthIndex>=0?getRankInMonth(y,bu.name,d.months[s.monthIndex]):null,isL=rk===1;const fl=isL?'rgba(255,215,0,0.08)':(idx%2?'rgba(255,255,255,0.04)':'rgba(255,255,255,0.02)'),sk=isL?'rgba(255,215,0,0.4)':`${bu.color}30`;const py=padding.top+idx*lh+lg/2,ly=getY(idx,d.bus.length);svg+=`<rect x="${padding.left-10}" y="${py}" width="${graphWidth+20}" height="${lh-lg}" fill="${fl}" rx="8"/><rect x="${padding.left-10}" y="${py}" width="${graphWidth+20}" height="${lh-lg}" fill="none" stroke="${sk}" stroke-width="${isL?2:1}" rx="8"/>`;if(isL)svg+=`<text x="${padding.left-60}" y="${ly-15}" fill="#FFD700" font-size="16" text-anchor="end">🏆</text>`;svg+=`<text x="${padding.left-40}" y="${ly}" fill="${isL?'#FFD700':bu.color}" font-size="15" font-weight="900" text-anchor="end" dominant-baseline="middle" font-family="Orbitron,sans-serif">${bu.name}</text>`;});
-      dp.forEach((p,i)=>{const isS=p==='Start',hD=isS||d.months.includes(p),x=getX(i,dp.length);svg+=`<line x1="${x}" y1="${padding.top-10}" x2="${x}" y2="${padding.top+graphHeight+10}" stroke="${hD?'rgba(255,255,255,0.15)':'rgba(255,255,255,0.05)'}" stroke-dasharray="${hD?'none':'5,5'}"/><text x="${x}" y="${padding.top-25}" fill="${isS?'#22c55e':(hD?'#fff':'#444')}" font-size="${isS?12:14}" text-anchor="middle" font-family="Orbitron,sans-serif" font-weight="700">${isS?'🚦 START':p}</text>`;if(!hD&&!isS)svg+=`<text x="${x}" y="${padding.top-10}" fill="#333" font-size="10" text-anchor="middle">TBD</text>`;});
-      d.bus.forEach((bu,bi)=>{const sx=getX(0,dp.length),sy=getY(bi,d.bus.length),av=getAvatar(bu.name,bu.color);let path=`M ${sx} ${sy}`,ax=sx;if(s.started&&s.monthIndex>=0){for(let i=0;i<s.monthIndex;i++){const m=d.months[i],rk=getRankInMonth(y,bu.name,m),pi=dp.indexOf(m),px=getX(pi-1,dp.length),mx=getX(pi,dp.length);path+=` L ${px+(rp[rk]||.55)*(mx-px)*.85} ${sy}`;}const m=d.months[s.monthIndex],rk=getRankInMonth(y,bu.name,m),pi=dp.indexOf(m),ppx=getX(pi-1,dp.length),mx=getX(pi,dp.length),tx=ppx+(rp[rk]||.55)*(mx-ppx)*.85;let lsx=sx;if(s.monthIndex>0){const pm=d.months[s.monthIndex-1],pr=getRankInMonth(y,bu.name,pm),ppi=dp.indexOf(pm),pppx=getX(ppi-1,dp.length),pmx=getX(ppi,dp.length);lsx=pppx+(rp[pr]||.55)*(pmx-pppx)*.85;}ax=lsx+(tx-lsx)*easeOutCubic(s.progress);path+=` L ${ax} ${sy}`;}
-        svg+=`<path d="${path}" fill="none" stroke="${bu.color}" stroke-width="3" stroke-linecap="round" style="filter:drop-shadow(0 0 6px ${bu.color})"/>`;const iS=ip.find(x=>x.name===bu.name),iR=ip.indexOf(iS)+1,isL=iR===1&&s.started&&s.monthIndex>=0,as=isL?28:24;if(isL)svg+=`<circle cx="${ax}" cy="${sy}" r="38" fill="rgba(255,215,0,0.15)"/>`;svg+=`<circle cx="${ax}" cy="${sy}" r="${isL?34:30}" fill="${bu.color}20"/><circle cx="${ax}" cy="${sy}" r="${as}" fill="#1a1a2e" stroke="${isL?'#FFD700':bu.color}" stroke-width="${isL?4:3}"/><clipPath id="c${y}${bi}"><circle cx="${ax}" cy="${sy}" r="${as-3}"/></clipPath><image href="${av}" x="${ax-as+3}" y="${sy-as+3}" width="${(as-3)*2}" height="${(as-3)*2}" clip-path="url(#c${y}${bi})"/>`;
-        if(s.started&&s.monthIndex>=0){const bc={1:'#FFD700',2:'#C0C0C0',3:'#CD7F32'};svg+=`<circle cx="${ax+(isL?22:18)}" cy="${sy-(isL?22:18)}" r="14" fill="${bc[iR]||'#444'}" stroke="#1a1a2e" stroke-width="2"/><text x="${ax+(isL?22:18)}" y="${sy-(isL?18:14)}" fill="${iR<=3?'#000':'#fff'}" font-size="12" font-weight="900" text-anchor="middle" font-family="Orbitron,sans-serif">${iR}</text>`;if(isL)svg+=`<text x="${ax}" y="${sy-42}" font-size="24" text-anchor="middle">👑</text>`;svg+=`<rect x="${ax+(isL?32:28)}" y="${sy-12}" width="55" height="24" rx="4" fill="${isL?'#FFD700':bu.color}"/><text x="${ax+(isL?59:55)}" y="${sy+4}" fill="#000" font-size="11" font-weight="700" text-anchor="middle" font-family="Orbitron,sans-serif">${(iS?.score||0).toFixed(2)}</text>`;}});
-      svg+=`<defs><pattern id="ck${y}" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="4" height="4" fill="rgba(255,255,255,0.3)"/><rect x="4" y="4" width="4" height="4" fill="rgba(255,255,255,0.3)"/><rect x="4" width="4" height="4" fill="rgba(0,0,0,0.3)"/><rect y="4" width="4" height="4" fill="rgba(0,0,0,0.3)"/></pattern></defs><rect x="${padding.left+graphWidth+10}" y="${padding.top}" width="15" height="${graphHeight}" fill="url(#ck${y})" opacity="0.6" rx="2"/><text x="${padding.left+graphWidth+17}" y="${padding.top-10}" fill="#666" font-size="14" text-anchor="middle">🏁</text>`;
-      let lb='';ip.forEach((bu,i)=>{const pm=s.monthIndex>0?d.months[s.monthIndex-1]:null,pr=pm?getRankInMonth(y,bu.name,pm):i+1,ch=pr-(i+1),bc={0:'#FFD700',1:'#C0C0C0',2:'#CD7F32'},isL=s.started&&s.monthIndex>=0&&i===0,cfg=d.bus.find(b=>b.name===bu.name);lb+=`<div class="leaderboard-item ${isL?'leader':''}"><div class="rank-badge" style="background:${s.started&&s.monthIndex>=0?bc[i]||'#333':'#333'};color:${s.started&&s.monthIndex>=0&&i<3?'#000':'#666'}">${i+1}</div><img src="${getAvatar(bu.name,cfg?.color||'#888')}" class="leaderboard-avatar" style="border:2px solid ${cfg?.color||'#888'}"><div class="leaderboard-info"><div class="leaderboard-name" style="color:${isL?'#FFD700':cfg?.color||'#888'}">${bu.name}</div><div class="leaderboard-score-row"><span class="leaderboard-score">${s.started&&s.monthIndex>=0?bu.score.toFixed(2):'—'}</span>${s.started&&s.monthIndex>0&&ch?`<span class="rank-change ${ch>0?'up':'down'}">${ch>0?'▲'+ch:'▼'+Math.abs(ch)}</span>`:''}</div></div>${isL?'<div style="font-size:14px">👑</div>':''}</div>`;});
-      let h=`<div class="header"><div class="header-subtitle">🏁 ${y} CHAMPIONSHIP 🏁</div><h1 class="header-title">Risk Score Race</h1><div class="header-tracker">BUSINESS UNIT MONTHLY TRACKER</div>${s.started&&s.monthIndex>=0?`<div class="current-month-badge">📅 ${d.months[s.monthIndex].toUpperCase()} ${y}</div>`:''}</div><div class="main-container"><div class="chart-container"><svg width="100%" viewBox="0 0 ${chartWidth} ${chartHeight}" style="overflow:visible;display:block">${svg}</svg></div><div class="leaderboard"><div class="leaderboard-header"><div class="leaderboard-label">${s.started&&s.monthIndex>=0?'LIVE':'CURRENT'}</div><div class="leaderboard-title">🏆 STANDINGS</div></div>${lb}<div class="progress-section"><div class="progress-label">MONTH ${s.started&&s.monthIndex>=0?s.monthIndex+1:0} OF 12</div><div class="progress-bar"><div class="progress-fill" style="width:${((s.started&&s.monthIndex>=0?s.monthIndex+1:0)/12)*100}%"></div></div></div></div></div>${!s.started?`<div class="begin-race-container"><button class="begin-race-btn" onclick="startRace('${y}')">🏁 Begin Race</button></div>`:(s.animated?`<div class="begin-race-container"><button class="begin-race-btn" onclick="restartRace('${y}')" style="background:linear-gradient(135deg,#FF6B35 0%,#ff4500 100%);box-shadow:0 4px 20px rgba(255,107,53,0.4)">🔄 Restart Race</button></div>`:'')}<div class="legend-note">${iC&&s.animated?'🏆 RACE COMPLETE':(s.started?'🏎️ RACING...':'🏎️ READY • '+d.months.length+' MONTHS')}</div>`;
-      if(s.animated&&d.months.length<12){const nm=am[d.months.length]||'TBD';h+=`<div class="overlay"><div style="text-align:center;margin-bottom:40px"><div style="font-size:60px;margin-bottom:10px">📊</div><h2 style="font-family:Orbitron,sans-serif;font-size:36px;font-weight:900;color:#00D4AA;letter-spacing:4px">CURRENT STANDINGS</h2><p style="font-size:18px;color:#888;letter-spacing:3px;margin-top:10px">${d.months.length} OF 12 MONTHS COMPLETE</p></div><div class="standings-list">${st.map((bu,i)=>{const cfg=d.bus.find(b=>b.name===bu.name),bc={0:'#FFD700',1:'#C0C0C0',2:'#CD7F32'};return`<div class="standings-item ${!i?'leader':''}"><div class="standings-rank" style="background:${bc[i]||'#333'};color:${i<3?'#000':'#666'}">${i+1}</div><img src="${getAvatar(bu.name,cfg?.color||'#888')}" style="width:40px;height:40px;border-radius:50%;border:3px solid ${cfg?.color||'#888'}"><div class="standings-name" style="color:${!i?'#FFD700':cfg?.color||'#888'}">${bu.name}</div><div class="standings-score" style="font-size:18px;color:#fff;font-weight:900;font-family:Orbitron,sans-serif">${bu.score.toFixed(2)}</div>${!i?'<div style="font-size:20px">👑</div>':''}</div>`;}).join('')}</div><p style="font-size:14px;color:#666;margin-top:30px;letter-spacing:2px">🏎️ NEXT: ${nm.toUpperCase()} ${y}</p><button class="close-btn teal" onclick="closeOverlay('${y}')">CLOSE</button></div>`;}
-      if(s.celebration){h+=generateConfetti();h+=`<div class="overlay"><div style="text-align:center;margin-bottom:40px;animation:bounce 1s ease-in-out infinite"><div style="font-size:80px;margin-bottom:10px">🏆</div><h2 style="font-family:Orbitron,sans-serif;font-size:36px;font-weight:900;color:#FFD700;letter-spacing:4px">RACE COMPLETE!</h2><p style="font-size:18px;color:#888;letter-spacing:3px;margin-top:10px">${y} CHAMPIONSHIP FINAL</p></div><div class="podium-container">${[1,0,2].map(i=>{const bu=st[i];if(!bu)return'';const cfg=d.bus.find(b=>b.name===bu.name),sz=[{w:80,h:120,f:48,c:'#C0C0C0',d:.3,g:''},{w:100,h:160,f:64,c:'#FFD700',d:.1,g:'box-shadow:0 0 30px rgba(255,215,0,0.5)'},{w:70,h:90,f:40,c:'#CD7F32',d:.5,g:''}][i===0?1:i===1?0:2];return`<div class="podium-place" style="animation-delay:${sz.d}s;opacity:0;text-align:center">${i===0?'<div style="font-size:40px;margin-bottom:10px;animation:bounce .5s ease-in-out infinite">👑</div>':''}<img src="${getAvatar(bu.name,cfg?.color||'#888')}" style="width:${sz.w}px;height:${sz.w}px;border-radius:50%;border:4px solid ${sz.c};margin-bottom:15px;${sz.g}"><div style="font-family:Orbitron,sans-serif;font-weight:700;color:${i===0?'#FFD700':'#fff'};font-size:${i===0?16:i===1?14:12}px;margin-bottom:5px">${bu.name}</div><div style="font-family:Orbitron,sans-serif;font-weight:900;color:${sz.c};font-size:${i===0?24:i===1?18:16}px;margin-bottom:15px">${bu.score.toFixed(2)}</div><div style="width:${sz.h}px;height:${sz.h}px;background:linear-gradient(180deg,${sz.c} 0%,${i===0?'#B8860B':i===1?'#808080':'#8B4513'} 100%);border-radius:10px 10px 0 0;display:flex;align-items:center;justify-content:center;font-family:Orbitron,sans-serif;font-weight:900;color:#fff;font-size:${sz.f}px">${i===0?1:i===1?2:3}</div></div>`;}).join('')}</div><button class="close-btn" onclick="closeOverlay('${y}')">CLOSE</button></div>`;}
+      
+      // Dynamic chart dimensions
+      const chart = getChartDimensions(d.bus.length);
+      const graphWidth = chart.width - padding.left - padding.right;
+      const graphHeight = chart.height - padding.top - padding.bottom;
+      
+      const lh=graphHeight/d.bus.length,lg=Math.max(4, Math.min(8, 60/d.bus.length)),st=getCurrentStandings(y),ip=getInterpolatedStandings(y),rp={1:1,2:.85,3:.78,4:.70,5:.62,6:.55,7:.50,8:.46,9:.42,10:.38,11:.35};
+      
+      // Adjust sizes based on BU count
+      const buCount = d.bus.length;
+      const avatarSize = buCount > 8 ? 18 : buCount > 6 ? 20 : 24;
+      const avatarSizeLeader = avatarSize + 4;
+      const fontSize = buCount > 8 ? 10 : buCount > 6 ? 11 : 13;
+      const nameTruncate = buCount > 8 ? 14 : buCount > 6 ? 16 : 20;
+      
+      // Start SVG with defs and checker pattern (background)
+      let svg=`<defs><pattern id="ck${y}" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="3" height="3" fill="rgba(255,255,255,0.3)"/><rect x="3" y="3" width="3" height="3" fill="rgba(255,255,255,0.3)"/><rect x="3" width="3" height="3" fill="rgba(0,0,0,0.3)"/><rect y="3" width="3" height="3" fill="rgba(0,0,0,0.3)"/></pattern></defs><rect x="${padding.left+graphWidth+5}" y="${padding.top}" width="12" height="${graphHeight}" fill="url(#ck${y})" opacity="0.6" rx="2"/><text x="${padding.left+graphWidth+11}" y="${padding.top-8}" fill="#666" font-size="12" text-anchor="middle">🏁</text>`;
+      
+      d.bus.forEach((bu,idx)=>{const rk=s.started&&s.monthIndex>=0?getRankInMonth(y,bu.name,d.months[s.monthIndex]):null,isL=rk===1;const fl=isL?'rgba(255,215,0,0.08)':(idx%2?'rgba(255,255,255,0.04)':'rgba(255,255,255,0.02)'),sk=isL?'rgba(255,215,0,0.4)':`${bu.color}30`;const py=padding.top+idx*lh+lg/2,ly=getY(idx,d.bus.length,graphHeight);
+        svg+=`<rect x="${padding.left-10}" y="${py}" width="${graphWidth+20}" height="${lh-lg}" fill="${fl}" rx="6"/><rect x="${padding.left-10}" y="${py}" width="${graphWidth+20}" height="${lh-lg}" fill="none" stroke="${sk}" stroke-width="${isL?2:1}" rx="6"/>`;
+        if(isL)svg+=`<text x="${padding.left-125}" y="${ly}" fill="#FFD700" font-size="12" text-anchor="start" dominant-baseline="middle">👑</text>`;
+        // Use foreignObject for text wrapping
+        svg+=`<foreignObject x="5" y="${ly-lh/2+lg/2}" width="${padding.left-30}" height="${lh-lg}"><div xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%;display:flex;align-items:center;justify-content:flex-end;padding-right:5px"><span style="font-family:Orbitron,sans-serif;font-size:${fontSize}px;font-weight:900;color:${isL?'#FFD700':bu.color};text-align:right;line-height:1.2;word-wrap:break-word;overflow-wrap:break-word;max-width:${padding.left-40}px">${bu.name}</span></div></foreignObject>`;
+      });
+      dp.forEach((p,i)=>{const isS=p==='Start',hD=isS||d.months.includes(p),x=getX(i,dp.length,graphWidth);svg+=`<line x1="${x}" y1="${padding.top-10}" x2="${x}" y2="${padding.top+graphHeight+10}" stroke="${hD?'rgba(255,255,255,0.15)':'rgba(255,255,255,0.05)'}" stroke-dasharray="${hD?'none':'5,5'}"/><text x="${x}" y="${padding.top-20}" fill="${isS?'#22c55e':(hD?'#fff':'#444')}" font-size="${isS?10:11}" text-anchor="middle" font-family="Orbitron,sans-serif" font-weight="700">${isS?'🚦':p}</text>`;if(!hD&&!isS)svg+=`<text x="${x}" y="${padding.top-8}" fill="#333" font-size="8" text-anchor="middle">TBD</text>`;});
+      d.bus.forEach((bu,bi)=>{const sx=getX(0,dp.length,graphWidth),sy=getY(bi,d.bus.length,graphHeight),av=getAvatar(bu.name,bu.color);let path=`M ${sx} ${sy}`,ax=sx;if(s.started&&s.monthIndex>=0){for(let i=0;i<s.monthIndex;i++){const m=d.months[i],rk=getRankInMonth(y,bu.name,m),pi=dp.indexOf(m),px=getX(pi-1,dp.length,graphWidth),mx=getX(pi,dp.length,graphWidth);path+=` L ${px+(rp[rk]||.35)*(mx-px)*.85} ${sy}`;}const m=d.months[s.monthIndex],rk=getRankInMonth(y,bu.name,m),pi=dp.indexOf(m),ppx=getX(pi-1,dp.length,graphWidth),mx=getX(pi,dp.length,graphWidth),tx=ppx+(rp[rk]||.35)*(mx-ppx)*.85;let lsx=sx;if(s.monthIndex>0){const pm=d.months[s.monthIndex-1],pr=getRankInMonth(y,bu.name,pm),ppi=dp.indexOf(pm),pppx=getX(ppi-1,dp.length,graphWidth),pmx=getX(ppi,dp.length,graphWidth);lsx=pppx+(rp[pr]||.35)*(pmx-pppx)*.85;}ax=lsx+(tx-lsx)*easeOutCubic(s.progress);path+=` L ${ax} ${sy}`;}
+        svg+=`<path d="${path}" fill="none" stroke="${bu.color}" stroke-width="2" stroke-linecap="round" style="filter:drop-shadow(0 0 4px ${bu.color})"/>`;const iS=ip.find(x=>x.name===bu.name),iR=iS?.rank||999,isL=iR===1&&s.started&&s.monthIndex>=0,as=isL?avatarSizeLeader:avatarSize;
+        if(isL)svg+=`<circle cx="${ax}" cy="${sy}" r="${as+10}" fill="rgba(255,215,0,0.12)"/>`;
+        svg+=`<circle cx="${ax}" cy="${sy}" r="${as+4}" fill="${bu.color}20"/><circle cx="${ax}" cy="${sy}" r="${as}" fill="#1a1a2e" stroke="${isL?'#FFD700':bu.color}" stroke-width="${isL?3:2}"/><clipPath id="c${y}${bi}"><circle cx="${ax}" cy="${sy}" r="${as-2}"/></clipPath><image href="${av}" x="${ax-as+2}" y="${sy-as+2}" width="${(as-2)*2}" height="${(as-2)*2}" clip-path="url(#c${y}${bi})"/>`;
+        if(s.started&&s.monthIndex>=0){const bc={1:'#FFD700',2:'#C0C0C0',3:'#CD7F32'};svg+=`<circle cx="${ax+(isL?as-2:as-4)}" cy="${sy-(isL?as-2:as-4)}" r="10" fill="${bc[iR]||'#444'}" stroke="#1a1a2e" stroke-width="2"/><text x="${ax+(isL?as-2:as-4)}" y="${sy-(isL?as-6:as-8)}" fill="${iR<=3?'#000':'#fff'}" font-size="8" font-weight="900" text-anchor="middle" font-family="Orbitron,sans-serif">${iR}</text>`;if(isL)svg+=`<text x="${ax}" y="${sy-as-12}" font-size="14" text-anchor="middle">👑</text>`;svg+=`<rect x="${ax+as+4}" y="${sy-8}" width="46" height="16" rx="3" fill="${isL?'#FFD700':bu.color}"/><text x="${ax+as+27}" y="${sy+3}" fill="#000" font-size="7" font-weight="700" text-anchor="middle" font-family="Orbitron,sans-serif">${(iS?.score||0).toFixed(2)}</text>`;}});
+      
+      // Leaderboard with tie-aware rankings
+      let lb='';ip.forEach((bu)=>{const cfg=d.bus.find(b=>b.name===bu.name),bc={1:'#FFD700',2:'#C0C0C0',3:'#CD7F32'},isL=bu.rank===1&&s.started&&s.monthIndex>=0;
+        lb+=`<div class="leaderboard-item ${isL?'leader':''}"><div class="rank-badge" style="background:${s.started&&s.monthIndex>=0?bc[bu.rank]||'#333':'#333'};color:${s.started&&s.monthIndex>=0&&bu.rank<=3?'#000':'#666'}">${bu.rank||'-'}</div><img src="${getAvatar(bu.name,cfg?.color||'#888')}" class="leaderboard-avatar" style="border:2px solid ${cfg?.color||'#888'}"><div class="leaderboard-info"><div class="leaderboard-name" style="color:${isL?'#FFD700':cfg?.color||'#888'}">${bu.name}</div><div class="leaderboard-score-row"><span class="leaderboard-score">${s.started&&s.monthIndex>=0?bu.score.toFixed(2):'—'}</span></div></div>${isL?'<div style="font-size:12px">👑</div>':''}</div>`;});
+      
+      let h=`<div class="header"><div class="header-subtitle">🏁 ${y} CHAMPIONSHIP 🏁</div><h1 class="header-title">Risk Score Race</h1><div class="header-tracker">BUSINESS UNIT MONTHLY TRACKER</div>${s.started&&s.monthIndex>=0?`<div class="current-month-badge">📅 ${d.months[s.monthIndex].toUpperCase()} ${y}</div>`:''}</div><div class="begin-race-container">${!s.started?`<button class="begin-race-btn" onclick="startRace('${y}')">🏁 Begin Race</button>`:(s.animated?`<button class="begin-race-btn" onclick="restartRace('${y}')" style="background:linear-gradient(135deg,#FF6B35 0%,#ff4500 100%);box-shadow:0 4px 20px rgba(255,107,53,0.4)">🔄 Restart Race</button>`:'')}</div><div class="main-container"><div class="chart-container"><svg width="100%" viewBox="0 0 ${chart.width} ${chart.height}" style="display:block">${svg}</svg></div><div class="leaderboard" style="height:${chart.height}px"><div class="leaderboard-header"><div class="leaderboard-label">${s.started&&s.monthIndex>=0?'LIVE':'CURRENT'}</div><div class="leaderboard-title">🏆 STANDINGS</div></div><div class="leaderboard-scroll">${lb}</div><div class="progress-section"><div class="progress-label">MONTH ${s.started&&s.monthIndex>=0?s.monthIndex+1:0} OF 12</div><div class="progress-bar"><div class="progress-fill" style="width:${((s.started&&s.monthIndex>=0?s.monthIndex+1:0)/12)*100}%"></div></div></div></div></div><div class="legend-note">${iC&&s.animated?'🏆 RACE COMPLETE':(s.started?'🏎️ RACING...':'🏎️ READY • '+d.months.length+' MONTHS')}</div>`;
+      
+      // Current standings overlay (not 12 months) - with podium for top 3
+      if(s.animated&&d.months.length<12){
+        const nm=am[d.months.length]||'TBD';
+        
+        // Get unique scores sorted descending, then group BUs by score
+        const uniqueScores = [...new Set(st.map(bu => bu.score))].sort((a,b) => b - a);
+        const g1 = st.filter(bu => bu.score === uniqueScores[0]) || [];
+        const g2 = uniqueScores[1] !== undefined ? st.filter(bu => bu.score === uniqueScores[1]) : [];
+        const g3 = uniqueScores[2] !== undefined ? st.filter(bu => bu.score === uniqueScores[2]) : [];
+        
+        // Get BUs not in top 3 podiums
+        const top3Scores = uniqueScores.slice(0, 3);
+        const restBUs = st.filter(bu => !top3Scores.includes(bu.score));
+        
+        const renderPodiumGroup = (group, rank, config) => {
+          if(!group.length) return '';
+          const {w, h, f, c, d: delay, g} = config;
+          const isSingle = group.length === 1;
+          
+          return `<div class="podium-place" style="animation-delay:${delay}s;opacity:0;text-align:center">
+            ${rank===1?'<div style="font-size:24px;margin-bottom:5px">👑</div>':''}
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin-bottom:8px;max-width:${w*2}px">
+              ${group.map(bu=>{const cfg=d.bus.find(b=>b.name===bu.name);return`<img src="${getAvatar(bu.name,cfg?.color||'#888')}" style="width:${isSingle?w:Math.min(40,w)}px;height:${isSingle?w:Math.min(40,w)}px;border-radius:50%;border:2px solid ${c};${g}" title="${bu.name}">`;}).join('')}
+            </div>
+            <div style="font-family:Orbitron,sans-serif;font-weight:700;color:${rank===1?'#FFD700':'#fff'};font-size:${isSingle?11:9}px;margin-bottom:3px;max-width:${w+30}px;text-align:center;line-height:1.2">${isSingle?group[0].name:(group.length+' TIED')}</div>
+            <div style="font-family:Orbitron,sans-serif;font-weight:900;color:${c};font-size:${rank===1?16:rank===2?14:12}px;margin-bottom:8px">${group[0].score.toFixed(2)}</div>
+            <div style="width:${h}px;height:${h}px;background:linear-gradient(180deg,${c} 0%,${rank===1?'#B8860B':rank===2?'#808080':'#8B4513'} 100%);border-radius:6px 6px 0 0;display:flex;align-items:center;justify-content:center;font-family:Orbitron,sans-serif;font-weight:900;color:#fff;font-size:${f}px">${rank}</div>
+          </div>`;
+        };
+        
+        h+=`<div class="overlay">
+          <div style="text-align:center;margin-bottom:20px">
+            <div style="font-size:40px;margin-bottom:5px">📊</div>
+            <h2 style="font-family:Orbitron,sans-serif;font-size:24px;font-weight:900;color:#00D4AA;letter-spacing:3px">CURRENT STANDINGS</h2>
+            <p style="font-size:12px;color:#888;letter-spacing:2px;margin-top:5px">${d.months.length} OF 12 MONTHS COMPLETE</p>
+          </div>
+          
+          <div class="podium-container" style="margin-bottom:20px">
+            ${renderPodiumGroup(g2, 2, {w:55,h:70,f:28,c:'#C0C0C0',d:.2,g:''})}
+            ${renderPodiumGroup(g1, 1, {w:65,h:100,f:36,c:'#FFD700',d:.1,g:'box-shadow:0 0 15px rgba(255,215,0,0.4)'})}
+            ${renderPodiumGroup(g3, 3, {w:50,h:55,f:24,c:'#CD7F32',d:.3,g:''})}
+          </div>
+          
+          ${restBUs.length > 0 ? `
+            <div class="custom-scroll" style="background:rgba(255,255,255,0.03);border-radius:12px;padding:15px;max-width:400px;width:100%;max-height:200px;overflow-y:auto">
+              <div style="font-family:Orbitron,sans-serif;font-size:10px;color:#666;text-align:center;margin-bottom:10px;letter-spacing:2px">OTHER STANDINGS</div>
+              ${restBUs.map(bu => {
+                const cfg = d.bus.find(b => b.name === bu.name);
+                return `<div style="display:flex;align-items:center;gap:8px;padding:8px;margin-bottom:4px;background:rgba(255,255,255,0.02);border-radius:6px">
+                  <div style="width:22px;height:22px;border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;font-family:Orbitron,sans-serif;color:#666">${bu.rank}</div>
+                  <img src="${getAvatar(bu.name,cfg?.color||'#888')}" style="width:24px;height:24px;border-radius:50%;border:2px solid ${cfg?.color||'#888'}">
+                  <div style="flex:1;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;color:${cfg?.color||'#888'};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${bu.name}</div>
+                  <div style="font-family:Orbitron,sans-serif;font-size:11px;font-weight:900;color:#fff">${bu.score.toFixed(2)}</div>
+                </div>`;
+              }).join('')}
+            </div>
+          ` : ''}
+          
+          <p style="font-size:11px;color:#666;margin-top:15px;letter-spacing:2px">🏎️ RACE CONTINUES • NEXT: ${nm.toUpperCase()} ${y}</p>
+          <button class="close-btn teal" onclick="closeOverlay('${y}')">CLOSE</button>
+        </div>`;
+      }
+      
+      // Celebration overlay (12 months) - with ties on podium
+      if(s.celebration){
+        // Get unique scores sorted descending, then group BUs by score
+        const uniqueScores = [...new Set(st.map(bu => bu.score))].sort((a,b) => b - a);
+        const g1 = st.filter(bu => bu.score === uniqueScores[0]) || [];
+        const g2 = uniqueScores[1] !== undefined ? st.filter(bu => bu.score === uniqueScores[1]) : [];
+        const g3 = uniqueScores[2] !== undefined ? st.filter(bu => bu.score === uniqueScores[2]) : [];
+        
+        // Get BUs not in top 3 podiums
+        const top3Scores = uniqueScores.slice(0, 3);
+        const restBUs = st.filter(bu => !top3Scores.includes(bu.score));
+        
+        const renderPodiumGroup = (group, rank, config) => {
+          if(!group.length) return '';
+          const {w, h, f, c, d: delay, g} = config;
+          const isSingle = group.length === 1;
+          
+          return `<div class="podium-place" style="animation-delay:${delay}s;opacity:0;text-align:center">
+            ${rank===1?'<div style="font-size:32px;margin-bottom:8px;animation:bounce .5s ease-in-out infinite">👑</div>':''}
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:5px;margin-bottom:10px;max-width:${w*2}px">
+              ${group.map(bu=>{const cfg=d.bus.find(b=>b.name===bu.name);return`<img src="${getAvatar(bu.name,cfg?.color||'#888')}" style="width:${isSingle?w:Math.min(50,w)}px;height:${isSingle?w:Math.min(50,w)}px;border-radius:50%;border:3px solid ${c};${g}" title="${bu.name}">`;}).join('')}
+            </div>
+            <div style="font-family:Orbitron,sans-serif;font-weight:700;color:${rank===1?'#FFD700':'#fff'};font-size:${isSingle?13:10}px;margin-bottom:4px;max-width:${w+40}px;text-align:center;line-height:1.3">${isSingle?group[0].name:(group.length+' TIED')}</div>
+            <div style="font-family:Orbitron,sans-serif;font-weight:900;color:${c};font-size:${rank===1?20:rank===2?16:14}px;margin-bottom:10px">${group[0].score.toFixed(2)}</div>
+            <div style="width:${h}px;height:${h}px;background:linear-gradient(180deg,${c} 0%,${rank===1?'#B8860B':rank===2?'#808080':'#8B4513'} 100%);border-radius:8px 8px 0 0;display:flex;align-items:center;justify-content:center;font-family:Orbitron,sans-serif;font-weight:900;color:#fff;font-size:${f}px">${rank}</div>
+          </div>`;
+        };
+        
+        h+=generateConfetti();
+        h+=`<div class="overlay">
+          <div style="text-align:center;margin-bottom:20px;animation:bounce 1s ease-in-out infinite">
+            <div style="font-size:50px;margin-bottom:5px">🏆</div>
+            <h2 style="font-family:Orbitron,sans-serif;font-size:24px;font-weight:900;color:#FFD700;letter-spacing:3px">RACE COMPLETE!</h2>
+            <p style="font-size:12px;color:#888;letter-spacing:2px;margin-top:5px">${y} CHAMPIONSHIP FINAL</p>
+          </div>
+          
+          <div class="podium-container" style="margin-bottom:20px">
+            ${renderPodiumGroup(g2, 2, {w:70,h:100,f:36,c:'#C0C0C0',d:.3,g:''})}
+            ${renderPodiumGroup(g1, 1, {w:85,h:140,f:48,c:'#FFD700',d:.1,g:'box-shadow:0 0 25px rgba(255,215,0,0.5)'})}
+            ${renderPodiumGroup(g3, 3, {w:60,h:75,f:32,c:'#CD7F32',d:.5,g:''})}
+          </div>
+          
+          ${restBUs.length > 0 ? `
+            <div class="custom-scroll" style="background:rgba(255,255,255,0.03);border-radius:12px;padding:15px;max-width:400px;width:100%;max-height:180px;overflow-y:auto">
+              <div style="font-family:Orbitron,sans-serif;font-size:10px;color:#666;text-align:center;margin-bottom:10px;letter-spacing:2px">OTHER STANDINGS</div>
+              ${restBUs.map(bu => {
+                const cfg = d.bus.find(b => b.name === bu.name);
+                return `<div style="display:flex;align-items:center;gap:8px;padding:8px;margin-bottom:4px;background:rgba(255,255,255,0.02);border-radius:6px">
+                  <div style="width:22px;height:22px;border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;font-family:Orbitron,sans-serif;color:#666">${bu.rank}</div>
+                  <img src="${getAvatar(bu.name,cfg?.color||'#888')}" style="width:24px;height:24px;border-radius:50%;border:2px solid ${cfg?.color||'#888'}">
+                  <div style="flex:1;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;color:${cfg?.color||'#888'};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${bu.name}</div>
+                  <div style="font-family:Orbitron,sans-serif;font-size:11px;font-weight:900;color:#fff">${bu.score.toFixed(2)}</div>
+                </div>`;
+              }).join('')}
+            </div>
+          ` : ''}
+          
+          <button class="close-btn" onclick="closeOverlay('${y}')">CLOSE</button>
+        </div>`;
+      }
       return h;}
     function renderSettings(){const hasSaved=localStorage.getItem(STORAGE_KEY)!==null;let p25='',p26='';['2025','2026'].forEach(y=>{const d=raceDataStore[y];if(d&&d.bus.length){let rows=d.bus.map(bu=>`<tr><td>${bu.name}</td><td><span style="display:inline-block;width:20px;height:20px;background:${bu.color};border-radius:4px;vertical-align:middle"></span> ${bu.color}</td>${d.months.map(m=>`<td>${d.scores[bu.name]?.[m]?.toFixed(2)||'-'}</td>`).join('')}</tr>`).join('');const t=`<table><thead><tr><th>BU</th><th>Color</th>${d.months.map(m=>`<th>${m}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>`;if(y==='2025')p25=t;else p26=t;}});
       return`<div class="settings-container"><div class="header"><div class="header-subtitle">⚙️ SETTINGS ⚙️</div><h1 class="header-title">Data Management</h1><div class="header-tracker">UPLOAD AND MANAGE RACE DATA</div></div>${currentAlert?`<div class="alert alert-${currentAlert.type}"><span>${currentAlert.type==='success'?'✅':'❌'}</span><span style="flex:1;white-space:pre-wrap">${currentAlert.message}</span><button onclick="dismissAlert()" style="background:none;border:none;color:inherit;cursor:pointer;font-size:18px">×</button></div>`:''}<div class="settings-card"><div class="settings-title">💾 Data Storage Status</div><div class="settings-description">${hasSaved?'<span style="color:#22c55e">✅ Custom data saved in browser</span><br>Your uploaded data will persist across page reloads.':'<span style="color:#888">📦 Using default sample data</span><br>Upload an Excel file to save your own data.'}</div></div><div class="settings-card"><div class="settings-title">📤 Upload Race Data</div><div class="settings-description">Upload Excel (.xlsx) with sheets named <strong>"2025"</strong> and/or <strong>"2026"</strong>.<br>Columns: <strong>BU, Color, Jan, Feb, Mar...</strong> (up to Dec)<br><br>📌 Data will be saved in your browser and persist after refresh.</div><div class="upload-zone" onclick="triggerFileUpload()" ondragover="event.preventDefault();this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" ondrop="event.preventDefault();this.classList.remove('dragover');handleFileDrop(event)"><div class="upload-icon">📁</div><div class="upload-text"><strong>Click to upload</strong> or drag and drop<br>Excel files (.xlsx, .xls)</div></div><div class="btn-group"><button class="btn btn-primary" onclick="downloadTemplate()">📥 Download Template</button><button class="btn btn-secondary" onclick="resetToDefault()">🔄 Reset to Default</button></div></div><div class="settings-card"><div class="settings-title">🖼️ Custom Avatars</div><div class="settings-description">Place avatar images in the <strong>/images/</strong> folder.<br><br><strong>Naming convention:</strong> BU name in lowercase, spaces replaced with underscores<br><br><strong>Examples:</strong><br>• US RET → <code>images/us_ret.png</code><br>• CAN RETAIL → <code>images/can_retail.png</code><br>• ASIA → <code>images/asia.png</code><br><br><strong>Supported formats:</strong> PNG (recommended), JPG, GIF</div></div><div class="settings-card"><div class="settings-title">📊 Current Data - 2026</div>${p26?`<div class="data-preview">${p26}</div>`:'<div class="settings-description" style="color:#666">No data for 2026</div>'}</div><div class="settings-card"><div class="settings-title">📊 Current Data - 2025</div>${p25?`<div class="data-preview">${p25}</div>`:'<div class="settings-description" style="color:#666">No data for 2025</div>'}</div><div class="settings-card"><div class="settings-title">📝 Format Guide</div><div class="settings-description"><strong>Columns:</strong> BU (text), Color (#RRGGBB), Jan-Dec (0-100)<br><strong>Rules:</strong> Scores 0-100, valid hex colors, empty cells OK for future months<br><strong>Sheets:</strong> Must be named exactly "2025" or "2026"</div></div></div>`;}
