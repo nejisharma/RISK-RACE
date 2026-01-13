@@ -119,8 +119,60 @@
   <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" onchange="handleFileUpload(event)">
   <script>
     const defaultData = {
-      '2026': { bus: [{name:'US RET',color:'#00BFFF'},{name:'CAN RET',color:'#7B68EE'},{name:'ASIA',color:'#FF1493'},{name:'US RETAIL',color:'#FF6B35'},{name:'CAN RETAIL',color:'#00D4AA'}], months: ['Jan','Feb','Mar','Apr','May'], scores: {'US RET':{Jan:98,Feb:97.5,Mar:99.1,Apr:98.65,May:97.9},'CAN RET':{Jan:98.07,Feb:99.25,Mar:98.9,Apr:97.8,May:99.45},'ASIA':{Jan:82.88,Feb:85.4,Mar:88.75,Apr:91.2,May:94.3},'US RETAIL':{Jan:99.99,Feb:98.8,Mar:97.25,Apr:99.5,May:98.2},'CAN RETAIL':{Jan:99.02,Feb:97.6,Mar:98.45,Apr:99.15,May:99.6}}},
-      '2025': { bus: [{name:'US RET',color:'#00BFFF'},{name:'CAN RET',color:'#7B68EE'},{name:'ASIA',color:'#FF1493'},{name:'US RETAIL',color:'#FF6B35'},{name:'CAN RETAIL',color:'#00D4AA'}], months: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], scores: {'US RET':{Jan:96.5,Feb:97.2,Mar:98.1,Apr:97.8,May:98.5,Jun:99.1,Jul:98.7,Aug:99.3,Sep:98.9,Oct:99.5,Nov:99.2,Dec:99.6},'CAN RET':{Jan:97.3,Feb:98.4,Mar:97.9,Apr:98.8,May:99.2,Jun:98.6,Jul:99.4,Aug:98.9,Sep:99.6,Oct:99.1,Nov:99.7,Dec:99.8},'ASIA':{Jan:80.5,Feb:82.3,Mar:84.6,Apr:86.9,May:89.2,Jun:91.5,Jul:93.8,Aug:95.1,Sep:96.4,Oct:97.2,Nov:98,Dec:98.5},'US RETAIL':{Jan:98.8,Feb:98.2,Mar:99.1,Apr:98.5,May:99.3,Jun:98.7,Jul:99.5,Aug:99.1,Sep:98.8,Oct:99.6,Nov:99.3,Dec:99.4},'CAN RETAIL':{Jan:97.9,Feb:98.6,Mar:98.2,Apr:99.1,May:98.8,Jun:99.4,Jul:99,Aug:99.5,Sep:99.2,Oct:99.7,Nov:99.4,Dec:99.5}}}
+      '2025': { 
+        bus: [
+          {name:'Digital',color:'#FF1493'},
+          {name:'GA',color:'#FF6B35'},
+          {name:'Public Market',color:'#00D4AA'},
+          {name:'Private Market',color:'#FF4500'},
+          {name:'Wealth',color:'#32CD32'},
+          {name:'Retail',color:'#FFD700'},
+          {name:'Asia',color:'#8A2BE2'},
+          {name:'Canada RET',color:'#00CED1'},
+          {name:'US RET',color:'#DC143C'},
+          {name:'Platform',color:'#FF8C00'}
+        ], 
+        months: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], 
+        scores: {
+          'Digital':{Jan:96.0,Feb:93.91,Mar:93.225,Apr:98.76,May:98.89,Jun:98.98,Jul:98.98,Aug:99.24,Sep:98.64,Oct:98.445,Nov:99.14,Dec:99.43},
+          'GA':{Jan:98.5,Feb:98.77,Mar:98.145,Apr:98.48,May:98.23,Jun:97.32,Jul:98.14,Aug:96.83,Sep:96.165,Oct:97.125,Nov:95.725,Dec:98.545},
+          'Public Market':{Jan:99.0,Feb:99.105,Mar:98.665,Apr:97.94,May:99.045,Jun:99.39,Jul:98.525,Aug:98.78,Sep:98.695,Oct:98.685,Nov:97.97,Dec:98.565},
+          'Private Market':{Jan:98.0,Feb:98.44,Mar:98.46,Apr:98.71,May:98.98,Jun:92.06,Jul:91.54,Aug:90.575,Sep:88.425,Oct:87.07,Nov:85.415,Dec:98.385},
+          'Wealth':{Jan:93.5,Feb:94.72,Mar:93.28,Apr:97.395,May:96.835,Jun:97.63,Jul:97.52,Aug:96.31,Sep:96.645,Oct:97.14,Nov:97.73,Dec:98.055},
+          'Retail':{Jan:97.5,Feb:96.145,Mar:96.27,Apr:98.345,May:99.16,Jun:99.105,Jul:99.0,Aug:99.095,Sep:98.84,Oct:98.94,Nov:99.17,Dec:99.31},
+          'Asia':{Jan:96.5,Feb:95.465,Mar:95.625,Apr:97.815,May:98.74,Jun:98.6,Jul:98.875,Aug:98.855,Sep:98.665,Oct:98.83,Nov:93.26,Dec:99.08},
+          'Canada RET':{Jan:84.0,Feb:80.32,Mar:85.08,Apr:89.0,May:88.18,Jun:88.395,Jul:85.98,Aug:86.07,Sep:88.445,Oct:88.335,Nov:86.825,Dec:93.15},
+          'US RET':{Jan:84.5,Feb:81.86,Mar:81.515,Apr:90.515,May:93.195,Jun:91.375,Jul:91.975,Aug:90.36,Sep:91.8,Oct:94.275,Nov:95.425,Dec:97.455},
+          'Platform':{Jan:49.0,Feb:99.615,Mar:99.475,Apr:98.385,May:98.32,Jun:99.41,Jul:99.45,Aug:99.235,Sep:99.415,Oct:95.975,Nov:98.48,Dec:99.355}
+        }
+      },
+      '2026': { 
+        bus: [
+          {name:'Digital',color:'#FF1493'},
+          {name:'GA',color:'#FF6B35'},
+          {name:'Public Market',color:'#00D4AA'},
+          {name:'Private Market',color:'#FF4500'},
+          {name:'Wealth',color:'#32CD32'},
+          {name:'Retail',color:'#FFD700'},
+          {name:'Asia',color:'#8A2BE2'},
+          {name:'Canada RET',color:'#00CED1'},
+          {name:'US RET',color:'#DC143C'},
+          {name:'Platform',color:'#FF8C00'}
+        ], 
+        months: ['Jan'], 
+        scores: {
+          'Digital':{Jan:99.43},
+          'GA':{Jan:98.545},
+          'Public Market':{Jan:98.565},
+          'Private Market':{Jan:98.385},
+          'Wealth':{Jan:98.055},
+          'Retail':{Jan:99.31},
+          'Asia':{Jan:99.08},
+          'Canada RET':{Jan:93.15},
+          'US RET':{Jan:97.455},
+          'Platform':{Jan:99.355}
+        }
+      }
     };
     
     // localStorage functions
@@ -264,23 +316,33 @@
     function downloadTemplate(){const wb=XLSX.utils.book_new();
       // 2025 - Full 12 months data
       const d2025=[['BU','Color','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-        ['US RET','#00BFFF',96.5,97.2,98.1,97.8,98.5,99.1,98.7,99.3,98.9,99.5,99.2,99.6],
-        ['CAN RET','#7B68EE',97.3,98.4,97.9,98.8,99.2,98.6,99.4,98.9,99.6,99.1,99.7,99.8],
-        ['ASIA','#FF1493',80.5,82.3,84.6,86.9,89.2,91.5,93.8,95.1,96.4,97.2,98.0,98.5],
-        ['US RETAIL','#FF6B35',98.8,98.2,99.1,98.5,99.3,98.7,99.5,99.1,98.8,99.6,99.3,99.4],
-        ['CAN RETAIL','#00D4AA',97.9,98.6,98.2,99.1,98.8,99.4,99.0,99.5,99.2,99.7,99.4,99.5]];
+        ['Digital','#FF1493',96.0,93.91,93.225,98.76,98.89,98.98,98.98,99.24,98.64,98.445,99.14,99.43],
+        ['GA','#FF6B35',98.5,98.77,98.145,98.48,98.23,97.32,98.14,96.83,96.165,97.125,95.725,98.545],
+        ['Public Market','#00D4AA',99.0,99.105,98.665,97.94,99.045,99.39,98.525,98.78,98.695,98.685,97.97,98.565],
+        ['Private Market','#FF4500',98.0,98.44,98.46,98.71,98.98,92.06,91.54,90.575,88.425,87.07,85.415,98.385],
+        ['Wealth','#32CD32',93.5,94.72,93.28,97.395,96.835,97.63,97.52,96.31,96.645,97.14,97.73,98.055],
+        ['Retail','#FFD700',97.5,96.145,96.27,98.345,99.16,99.105,99.0,99.095,98.84,98.94,99.17,99.31],
+        ['Asia','#8A2BE2',96.5,95.465,95.625,97.815,98.74,98.6,98.875,98.855,98.665,98.83,93.26,99.08],
+        ['Canada RET','#00CED1',84.0,80.32,85.08,89.0,88.18,88.395,85.98,86.07,88.445,88.335,86.825,93.15],
+        ['US RET','#DC143C',84.5,81.86,81.515,90.515,93.195,91.375,91.975,90.36,91.8,94.275,95.425,97.455],
+        ['Platform','#FF8C00',49.0,99.615,99.475,98.385,98.32,99.41,99.45,99.235,99.415,95.975,98.48,99.355]];
       const ws2025=XLSX.utils.aoa_to_sheet(d2025);
       ws2025['!cols']=[{wch:15},{wch:10},{wch:8},{wch:8},{wch:8},{wch:8},{wch:8},{wch:8},{wch:8},{wch:8},{wch:8},{wch:8},{wch:8},{wch:8}];
       XLSX.utils.book_append_sheet(wb,ws2025,'2025');
-      // 2026 - Only 3 months data
-      const d2026=[['BU','Color','Jan','Feb','Mar'],
-        ['US RET','#00BFFF',98.0,97.5,99.1],
-        ['CAN RET','#7B68EE',98.07,99.25,98.9],
-        ['ASIA','#FF1493',82.88,85.4,88.75],
-        ['US RETAIL','#FF6B35',99.99,98.8,97.25],
-        ['CAN RETAIL','#00D4AA',99.02,97.6,98.45]];
+      // 2026 - Only Jan data
+      const d2026=[['BU','Color','Jan'],
+        ['Digital','#FF1493',99.43],
+        ['GA','#FF6B35',98.545],
+        ['Public Market','#00D4AA',98.565],
+        ['Private Market','#FF4500',98.385],
+        ['Wealth','#32CD32',98.055],
+        ['Retail','#FFD700',99.31],
+        ['Asia','#8A2BE2',99.08],
+        ['Canada RET','#00CED1',93.15],
+        ['US RET','#DC143C',97.455],
+        ['Platform','#FF8C00',99.355]];
       const ws2026=XLSX.utils.aoa_to_sheet(d2026);
-      ws2026['!cols']=[{wch:15},{wch:10},{wch:8},{wch:8},{wch:8}];
+      ws2026['!cols']=[{wch:15},{wch:10},{wch:8}];
       XLSX.utils.book_append_sheet(wb,ws2026,'2026');
       XLSX.writeFile(wb,'race_data_template.xlsx');}
     function showAlert(t,m){currentAlert={type:t,message:m};render();if(t==='success')setTimeout(()=>{currentAlert=null;render();},5000);}
